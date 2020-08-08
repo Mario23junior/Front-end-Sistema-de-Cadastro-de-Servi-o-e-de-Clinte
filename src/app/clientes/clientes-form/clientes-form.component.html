@@ -4,19 +4,20 @@
 </ol>
 
 <div class="container">
-    {{cliente.nome}}
-     <form>
+      <form #clienteForm="ngForm" (ngSubmit)= "onSubmit()">
          <div class="row">
              <div class="col-md-6">
-                  <div class="form-group">
+                  <div class="form-group">  
                       <label>ID</label>
-                      <input type="text" class="form-control" disabled="true" />
-                  </div>
+                      <input type="text" 
+                      [(ngModel)]="cliente.id" name="id" class="form-control" disabled="true" />
+                  </div>   
              </div>
              <div class="col-md-6">
-                <div class="form-group">
-                    <label>cpf: *</label>
-                    <input type="text" class="form-control" />
+                <div class="form-group"> 
+                    <label>Data de Cadastro</label>
+                    <input type="text" class="form-control" 
+                    [(ngModel)]="cliente.dataCadastro" name="dataCadastro" disabled="true" />
                 </div>
            </div>
          </div>
@@ -25,18 +26,22 @@
             <div class="col-md-6">
                  <div class="form-group">
                      <label>Nome:*</label>
-                     <input type="text" class="form-control" />
+                     <input type="text" class="form-control" 
+                     [(ngModel)]="cliente.nome" name="nome" >
                  </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>CPF *</label>
+                        <input type="number" class="form-control"
+                         [(ngModel)]="cliente.cpf" name="cpf" />
+                    </div>
+                </div>
             </div>
-            <div class="col-md-6">
-               <div class="form-group">
-                   <label>Data Cadastro</label>
-                   <input type="text" class="form-control" disabled="true" />
-               </div>
-          </div>
-        </div>
+        
         <div class="row">
-            <div class="col-md-2">
+            <div class="col-md-6">
                <button type="submit" class="btn btn-success">
                    <i class="fa fa-save"></i>
                    salvar
