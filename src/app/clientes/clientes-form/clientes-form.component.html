@@ -6,15 +6,18 @@
 <div class="container">
       <form #clienteForm="ngForm" (ngSubmit)= "onSubmit()">
       
-        <div class="alert alert-success" *ngIf="success == true" role="alert">
-            <strong>Ação realizada com sucesso!</strong>Cliente salvo e atualizado com sucesso
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <script>
-              $('.alert').alert()
-          </script>
+        <div class="row">
+            <div class="col-md-13">
+                <div class="alert alert-success" role="alert" *ngIf = "success == true">
+                   Cliente salvo com successo
+                </div>
+              <div class="col-md-13">
+                <div class="alert alert-danger" role="alert" *ngFor = "let erro of errors">
+                   {{erro}}
+                </div>
+            </div>
+        </div>
+    </div>
 
 
          <div class="row">
