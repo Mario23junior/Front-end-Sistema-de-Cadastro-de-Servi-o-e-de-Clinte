@@ -30,7 +30,18 @@
                         <td>{{ cliente.nome }}</td>
                         <td>{{ cliente.cpf }}</td>
                         <td>{{ cliente.dataCadastro }}</td>
-                        <td></td>
+                        <td>
+                            <button class="btn btn-warning" 
+                             routerLink="/clientes-form/{{cliente.id}}">
+                                Editar
+                                 <i class="fas fa-edit"></i>
+                            </button>
+
+                            <button type ="button" class="btn btn-danger ml-1" (click)="novoCadastro()">
+                                Deletar
+                                <i class="fas fa-trash-alt"></i>
+                            </button>
+                        </td>
                     </tr>
                 </tbody>
             </table>
