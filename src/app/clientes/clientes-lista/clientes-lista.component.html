@@ -37,14 +37,31 @@
                                  <i class="fas fa-edit"></i>
                             </button>
 
-                            <button type ="button" class="btn btn-danger ml-1" (click)="novoCadastro()">
+                            <button class="btn btn-danger ml-1" data-toggle="modal" (click)="preparaDelecao(cliente)"
+                            data-target="#modalDelecao">
                                 Deletar
                                 <i class="fas fa-trash-alt"></i>
-                            </button>
+                        </button>
                         </td>
                     </tr>
                 </tbody>
             </table>
         </div>
     </div>
+    <div id="modalDelecao" class="modal fade" role="dialog">
+       <div class="modal-dialog">
+            <div class="modal-content">
+               <div class="modal-header">
+                    <h2>Confirmar</h2>
+             </div>
+             <div class="modal-bady" *ngIf="clienteSelecionado">
+                  Tem certeza que deseja deletar permanentemente o cliente  {{clienteSelecionado.nome}} ?
+             </div>
+             <div class="modal-footer">
+                  <button class="btn btn-success">Confirmar</button>
+                  <button class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+             </div>
+       </div>
+    </div>
 </div>
+</div> 
