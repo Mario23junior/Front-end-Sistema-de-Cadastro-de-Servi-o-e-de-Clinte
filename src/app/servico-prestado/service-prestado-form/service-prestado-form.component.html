@@ -1,1 +1,22 @@
-<p>service-prestado-form works!</p>
+<h1 class="mt-4">Serviços Prestados</h1>
+<ol class="breadcrumb mb-4">
+    <li class="breadcrum-bitem active">Cadastrar Servicos Prestados</li>
+</ol>
+
+<div class="container">
+    <form #form="ngForm" (submit)="onSubmit()">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="">Cliente :</label>
+                    <select class="form-control">
+                        <option value="">Selecionar cliente...</option>
+                        <option *ngFor="let cliente of clientes" [ngValue]="cliente.id">
+                            {{ cliente.nome }}
+                        </option>
+                    </select>
+                </div>
+            </div>
+        </div>
+     </form>
+</div>
