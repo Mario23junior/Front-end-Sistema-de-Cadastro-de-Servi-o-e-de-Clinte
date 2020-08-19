@@ -12,6 +12,7 @@ import { ServicoPrestado } from './servicoPrestado';
   declarations: [
     ServicePrestadoFormComponent,
     ServicePrestadoListaComponent,
+    
    ],
 
   imports: [
