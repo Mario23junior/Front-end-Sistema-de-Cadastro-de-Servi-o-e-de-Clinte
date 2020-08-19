@@ -18,13 +18,15 @@ export class ServicoPrestadoService {
       return this.http.post<ServicoPrestado>(this.apiURL, ServicoPrestado);
   }
 
-  buscar(nome: string, mes: number) :Observable<ServicoPrestadoBusca[]> {    
+  buscar(nome: string, mes: number) : Observable<ServicoPrestadoBusca[]> {    
     const httpParams = new HttpParams()
     .set("nome", nome)
-    .set("mes",mes.toString());
+    .set("mes", mes ? mes.toString() : '');
 
      const url = this.apiURL + "?" + httpParams.toString();
-      console.log(url)
-     return this.http.get<any>(url);
+      return this.http.get<any>(url);
   }
-}
+
+ }
+
+
