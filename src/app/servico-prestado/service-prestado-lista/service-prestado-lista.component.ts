@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {ServicoPrestadoBusca} from './servicoPrestadoBusca';
+import {ServicoPrestadoService}  from '../../servico-prestado.service'
+
 
 @Component({
   selector: 'app-service-prestado-lista',
@@ -7,12 +10,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ServicePrestadoListaComponent implements OnInit {
 
-  nome: String;
+  nome: string;
   mes: number;
-  meses:number[];
+  meses: number[];
+  lista: ServicoPrestadoBusca[];
 
-
-  constructor() { 
+  constructor( 
+  private service: ServicoPrestadoService
+  ) { 
     this.meses = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 ,12]
   }
 
@@ -20,6 +25,8 @@ export class ServicePrestadoListaComponent implements OnInit {
   }
   
   consultar() {
-    console.log(this.nome, this.mes)
-  }
+     this.service
+     .buscar(this.nome, this.mes)
+     .subscribe(response => this.lista = response);
+   }
 }
