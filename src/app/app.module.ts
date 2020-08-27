@@ -14,6 +14,7 @@ import {ServicoPrestadoModule} from './servico-prestado/servico-prestado.module'
 import {ServicoPrestadoService} from './servico-prestado.service';
 import { LoginComponent } from './login/login.component';
 import { LayoutComponent } from './layout/layout.component'
+import {AuthService} from '../app/auth.service'
 
 @NgModule({
   declarations: [
@@ -35,8 +36,9 @@ import { LayoutComponent } from './layout/layout.component'
   ],
   providers: [
     ClientesService,
-    ServicoPrestadoService
-  ],
+    ServicoPrestadoService,
+    AuthService
+    ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
