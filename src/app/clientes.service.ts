@@ -12,7 +12,7 @@ export class ClientesService {
 
   constructor( private http: HttpClient) {}
     
-  apiURL:string = environment.apiUrlBase + '/api/clientes';
+  apiURL:string = environment.apiURLBase + '/api/clientes';
 
     //salvando dados no banco de dados 
     salvar( cliente: Cliente ) : Observable<Cliente> {
