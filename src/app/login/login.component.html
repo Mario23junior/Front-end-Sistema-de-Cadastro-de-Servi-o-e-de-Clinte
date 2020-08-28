@@ -11,12 +11,14 @@
                                 </h3>
                             </div>
                             <div class="card-body">
-                                <div class="alert alert-danger" *ngIf="loginError">
-                                    Login e / ou Senha incorreta(a)
+                                
+                                <div class="alert alert-success" *ngIf="mensagemSucesso">
+                                    {{ mensagemSucesso }}
                                 </div>
 
-                                <div class="alert alert-success" *ngIf="mensagemSucesso">
-                                     {{ mensagemSucesso }}
+                                
+                                <div class="alert alert-danger" *ngFor="let erro of errors ">
+                                      {{ erro }}
                                 </div>
 
                                 <form #loginForm="ngForm" (submit)="onSubmit();">
